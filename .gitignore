@@ -1,0 +1,43 @@
+# Dépendances Node.js
+node_modules/
+**/node_modules/
+
+# Variables d'environnement
+.env
+**/.env
+
+# Dossiers de build
+dist/
+**/dist/
+build/
+**/build/
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+pnpm-debug.log*
+
+# Couverture de tests
+coverage/
+
+# Fichiers système
+.DS_Store
+.vscode/
+.idea/
+
+# Fichiers temporaires
+*.local
+
+# Sauvegardes
+backend/backup_mysql/
+
+# Anciennes versions
+*.old
+*.bak
+
+# Dossiers temporaires
+tmp/
+temp/
+.vercel

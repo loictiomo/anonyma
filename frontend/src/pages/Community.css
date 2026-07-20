@@ -1,0 +1,44 @@
+.community-list-page {
+  padding: 32px;
+  max-width: 900px;
+}
+
+.community-list-page h1 {
+  margin-bottom: 8px;
+}
+
+.community-list-page > p {
+  color: #667085;
+  margin-bottom: 28px;
+}
+
+.community-list-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 18px;
+}
+
+.community-list-card {
+  display: block;
+  background: white;
+  border: 1px solid #eaecf0;
+  border-radius: 16px;
+  padding: 20px;
+  text-decoration: none;
+  color: inherit;
+  transition: border-color 0.15s ease;
+}
+
+.community-list-card:hover {
+  border-color: #6d5dfc;
+}
+
+.community-list-card h3 {
+  margin: 0 0 8px;
+}
+
+.community-list-card p {
+  margin: 0;
+  color: #667085;
+  font-size: 14px;
+}

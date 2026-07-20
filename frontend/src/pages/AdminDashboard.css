@@ -1,0 +1,169 @@
+* {
+  box-sizing: border-box;
+}
+
+.admin-page {
+  min-height: 100vh;
+  display: flex;
+  background: #f2f4f7;
+  color: #101828;
+}
+
+.admin-sidebar {
+  width: 260px;
+  background: #101828;
+  color: white;
+  padding: 28px;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.admin-sidebar h2 {
+  margin-bottom: 4px;
+  color: #ffffff;
+  font-size: 26px;
+}
+
+.admin-sidebar p {
+  color: #d0d5dd;
+  margin-bottom: 32px;
+}
+
+.admin-sidebar nav {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.admin-sidebar a {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.admin-sidebar button {
+  margin-top: 32px;
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 12px;
+  background: #6d5dfc;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.admin-main {
+  margin-left: 260px;
+  padding: 36px;
+  width: calc(100% - 260px);
+  min-height: 100vh;
+}
+
+.admin-main h1 {
+  text-align: center;
+  font-size: 48px;
+  margin-bottom: 24px;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 18px;
+  margin-top: 24px;
+}
+
+.stat-card {
+  background: white;
+  padding: 24px;
+  border-radius: 18px;
+  text-align: center;
+}
+
+.stat-card span {
+  color: #667085;
+  display: block;
+  min-height: 42px;
+}
+
+.stat-card strong {
+  display: block;
+  font-size: 32px;
+  margin-top: 8px;
+}
+
+.admin-section {
+  margin-top: 48px;
+}
+
+.admin-section h2 {
+  text-align: center;
+  font-size: 28px;
+}
+
+.table-wrapper {
+  overflow-x: auto;
+  background: white;
+  border-radius: 18px;
+  padding: 16px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  padding: 14px;
+  border-bottom: 1px solid #eaecf0;
+  text-align: left;
+  vertical-align: top;
+}
+
+th {
+  color: #475467;
+}
+
+td button {
+  margin-right: 8px;
+  margin-bottom: 6px;
+  padding: 8px 10px;
+  border: none;
+  border-radius: 8px;
+  background: #6d5dfc;
+  color: white;
+  cursor: pointer;
+}
+
+td button:hover,
+.admin-sidebar button:hover {
+  opacity: 0.9;
+}
+
+@media (max-width: 900px) {
+  .admin-page {
+    display: block;
+  }
+
+  .admin-sidebar {
+    position: static;
+    width: 100%;
+  }
+
+  .admin-main {
+    margin-left: 0;
+    width: 100%;
+    padding: 24px;
+  }
+
+  .admin-main h1 {
+    font-size: 36px;
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,27 @@
+databases:
+  - name: anonyma-db
+    plan: free
+    databaseName: anonyma
+    user: anonyma_user
+
+services:
+  - type: web
+    name: anonyma-backend
+    runtime: node
+    plan: free
+    rootDir: backend
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: PORT
+        value: 5000
+      - key: DATABASE_URL
+        fromDatabase:
+          name: anonyma-db
+          property: connectionString
+      - key: JWT_SECRET
+        generateValue: true
+      - key: ALLOWED_ORIGINS
+        sync: false
+        # À renseigner après le premier déploiement Vercel, ex:
+        # https://anonyma-xxxx.vercel.app

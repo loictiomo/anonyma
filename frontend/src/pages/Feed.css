@@ -1,0 +1,271 @@
+.feed-page {
+  min-height: 100vh;
+  display: flex;
+  background: #f2f4f7;
+  color: #101828;
+}
+
+.feed-sidebar {
+  width: 270px;
+  background: #101828;
+  color: white;
+  padding: 28px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+}
+
+.feed-sidebar h1 {
+  color: white;
+  margin-bottom: 4px;
+}
+
+.feed-sidebar p {
+  color: #d0d5dd;
+}
+
+.user-box {
+  background: rgba(255, 255, 255, 0.08);
+  padding: 16px;
+  border-radius: 16px;
+  margin: 28px 0;
+}
+
+.user-box span,
+.user-box small {
+  display: block;
+  color: #d0d5dd;
+}
+
+.user-box strong {
+  display: block;
+  font-size: 20px;
+  margin: 6px 0;
+}
+
+.feed-sidebar nav {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.feed-sidebar a {
+  color: white;
+  text-decoration: none;
+}
+
+.feed-sidebar button {
+  width: 100%;
+  margin-top: 32px;
+  padding: 13px;
+  border: none;
+  border-radius: 12px;
+  background: #6d5dfc;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.feed-main {
+  margin-left: 270px;
+  width: calc(100% - 270px);
+  padding: 36px;
+}
+
+.feed-header {
+  margin-bottom: 28px;
+}
+
+.feed-header h2 {
+  font-size: 44px;
+  margin-bottom: 6px;
+}
+
+.feed-header p {
+  color: #667085;
+}
+
+.feed-error {
+  background: #fee4e2;
+  color: #b42318;
+  padding: 14px;
+  border-radius: 12px;
+  margin-bottom: 18px;
+}
+
+.create-post-card,
+.post-card-feed,
+.communities-box,
+.empty-box {
+  background: white;
+  border-radius: 22px;
+  padding: 24px;
+  margin-bottom: 24px;
+}
+
+.create-post-card h3,
+.communities-box h3 {
+  margin-top: 0;
+}
+
+.create-post-card label {
+  display: block;
+  font-weight: bold;
+  margin-top: 16px;
+  margin-bottom: 8px;
+}
+
+.create-post-card select,
+.create-post-card textarea {
+  width: 100%;
+  border: 1px solid #d0d5dd;
+  border-radius: 12px;
+  padding: 14px;
+  font-size: 15px;
+}
+
+.create-post-card textarea {
+  min-height: 130px;
+  resize: vertical;
+}
+
+.anonymous-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.create-post-card button {
+  margin-top: 20px;
+  padding: 13px 22px;
+  border: none;
+  border-radius: 12px;
+  background: #6d5dfc;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.feed-search-input {
+  width: 100%;
+  border: 1px solid #d0d5dd;
+  border-radius: 12px;
+  padding: 13px 16px;
+  font-size: 15px;
+  margin-bottom: 20px;
+  box-sizing: border-box;
+}
+
+.post-top {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.post-avatar {
+  width: 46px;
+  height: 46px;
+  background: #6d5dfc;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+
+.post-top p {
+  margin: 4px 0 0;
+  color: #667085;
+}
+
+.post-content {
+  font-size: 18px;
+  line-height: 1.6;
+  margin: 22px 0;
+}
+
+.post-meta {
+  display: flex;
+  gap: 16px;
+  color: #667085;
+  margin-bottom: 18px;
+}
+
+.post-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.post-buttons button {
+  border: none;
+  background: #eef2ff;
+  color: #4238ca;
+  padding: 10px 14px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.post-buttons .danger {
+  background: #fee4e2;
+  color: #b42318;
+}
+
+.communities-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 16px;
+}
+
+.community-card {
+  background: #f9fafb;
+  border: 1px solid #eaecf0;
+  border-radius: 16px;
+  padding: 18px;
+  text-decoration: none;
+  color: inherit;
+}
+
+.community-card h4 {
+  margin-top: 0;
+}
+
+.community-card p {
+  color: #667085;
+  line-height: 1.5;
+}
+
+@media (max-width: 900px) {
+  .feed-page {
+    display: block;
+  }
+
+  .feed-sidebar {
+    position: static;
+    width: 100%;
+  }
+
+  .feed-main {
+    margin-left: 0;
+    width: 100%;
+    padding: 24px;
+  }
+
+  .feed-header h2 {
+    font-size: 34px;
+  }
+
+  .comment-link { 
+     background: #dcfae6;
+     color: #067647;
+     padding: 10px 14px;
+      border-radius: 10px;
+     text-decoration: none;
+     font-weight: bold;
+  }
+
+}

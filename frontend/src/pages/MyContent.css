@@ -1,0 +1,157 @@
+.my-content-page {
+  min-height: 100vh;
+  display: flex;
+  background: #f2f4f7;
+  color: #101828;
+}
+
+.my-content-sidebar {
+  width: 270px;
+  background: #101828;
+  color: white;
+  padding: 28px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+}
+
+.my-content-sidebar h1 {
+  margin-bottom: 4px;
+  color: white;
+}
+
+.my-content-sidebar p {
+  color: #d0d5dd;
+  margin-bottom: 32px;
+}
+
+.my-content-sidebar nav {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.my-content-sidebar a {
+  color: white;
+  text-decoration: none;
+}
+
+.my-content-sidebar button {
+  width: 100%;
+  margin-top: 32px;
+  padding: 13px;
+  border: none;
+  border-radius: 12px;
+  background: #6d5dfc;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.my-content-main {
+  margin-left: 270px;
+  width: calc(100% - 270px);
+  padding: 36px;
+}
+
+.back-link {
+  display: inline-block;
+  margin-bottom: 24px;
+  color: #6d5dfc;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.my-content-main h2 {
+  font-size: 42px;
+  margin-top: 0;
+}
+
+.my-content-error {
+  background: #fee4e2;
+  color: #b42318;
+  padding: 14px;
+  border-radius: 12px;
+  margin-bottom: 18px;
+}
+
+.my-section {
+  margin-top: 32px;
+}
+
+.my-section h3 {
+  font-size: 26px;
+}
+
+.my-card,
+.empty-box {
+  background: white;
+  border-radius: 20px;
+  padding: 22px;
+  margin-bottom: 18px;
+}
+
+.my-card-top {
+  display: flex;
+  justify-content: space-between;
+  gap: 14px;
+  margin-bottom: 12px;
+}
+
+.my-card-top span {
+  background: #eef2ff;
+  color: #4238ca;
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-size: 13px;
+}
+
+.my-card p {
+  line-height: 1.6;
+  margin-bottom: 12px;
+}
+
+.my-card small {
+  color: #667085;
+}
+
+.my-actions {
+  margin-top: 18px;
+  display: flex;
+  gap: 10px;
+}
+
+.my-actions a,
+.my-actions button {
+  border: none;
+  background: #eef2ff;
+  color: #4238ca;
+  padding: 10px 14px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.my-actions button {
+  background: #fee4e2;
+  color: #b42318;
+}
+
+@media (max-width: 900px) {
+  .my-content-page {
+    display: block;
+  }
+
+  .my-content-sidebar {
+    position: static;
+    width: 100%;
+  }
+
+  .my-content-main {
+    margin-left: 0;
+    width: 100%;
+    padding: 24px;
+  }
+}
