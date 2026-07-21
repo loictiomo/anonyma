@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import api from "../services/api";
-import "./Login.css";
+import Logo from "../components/brand/Logo";
+import "../styles/Auth.css";
 
 function Login() {
   const navigate = useNavigate();
@@ -37,15 +38,8 @@ function Login() {
         password
       });
 
-      localStorage.setItem(
-        "anonyma_token",
-        response.data.token
-      );
-
-      localStorage.setItem(
-        "anonyma_user",
-        JSON.stringify(response.data.user)
-      );
+      localStorage.setItem("anonyma_token", response.data.token);
+      localStorage.setItem("anonyma_user", JSON.stringify(response.data.user));
 
       if (
         response.data.user.role === "admin" ||
@@ -66,50 +60,74 @@ function Login() {
   };
 
   return (
-    <div className="login-page">
-      <form className="login-card" onSubmit={handleLogin}>
-        <h1>Anonyma</h1>
+    <div className="auth-page">
 
-        <p>Connexion à ton espace</p>
+      <aside className="auth-brand-panel">
+        <Logo
+          size={52}
+          variant="light"
+          tagline="Réseau social anonyme"
+        />
 
-        {error && (
-          <div className="error-box">
-            {error}
+        <div className="auth-brand-copy">
+          <h2>Libre de parler,<br />responsable de respecter.</h2>
+          <p>
+            Un espace où ta voix compte, sans jamais exposer qui tu es
+            — pensé pour des échanges honnêtes et respectueux.
+          </p>
+        </div>
+
+        <div className="auth-brand-ribbon" aria-hidden="true">
+          <span className="ribbon-seg ribbon-green" />
+          <span className="ribbon-seg ribbon-yellow" />
+          <span className="ribbon-seg ribbon-red" />
+        </div>
+      </aside>
+
+      <main className="auth-form-panel">
+        <form className="auth-card" onSubmit={handleLogin}>
+
+          <div className="auth-card-header">
+            <h1>Content de te revoir</h1>
+            <p>Connecte-toi à ton espace Anonyma.</p>
           </div>
-        )}
 
-        <label>Nom d'utilisateur</label>
+          {error && (
+            <div className="auth-error-box">
+              {error}
+            </div>
+          )}
 
-        <input
-          type="text"
-          placeholder="Ex : ivan_test"
-          value={username}
-          onChange={(e) => setUsername(e.target.value)}
-        />
+          <label htmlFor="login-username">Nom d'utilisateur</label>
+          <input
+            id="login-username"
+            type="text"
+            placeholder="Ex : ivan_test"
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
+          />
 
-        <label>Mot de passe</label>
+          <label htmlFor="login-password">Mot de passe</label>
+          <input
+            id="login-password"
+            type="password"
+            placeholder="Mot de passe"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
 
-        <input
-          type="password"
-          placeholder="Mot de passe"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-        />
+          <button type="submit" disabled={loading}>
+            {loading ? "Connexion..." : "Se connecter"}
+          </button>
 
-        <button
-          type="submit"
-          disabled={loading}
-        >
-          {loading ? "Connexion..." : "Se connecter"}
-        </button>
+          <span className="auth-switch">
+            Pas encore de compte ?{" "}
+            <Link to="/register">Créer un compte</Link>
+          </span>
 
-        <span>
-          Pas encore de compte ?{" "}
-          <Link to="/register">
-            Créer un compte
-          </Link>
-        </span>
-      </form>
+        </form>
+      </main>
+
     </div>
   );
 }

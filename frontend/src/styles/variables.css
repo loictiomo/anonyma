@@ -25,4 +25,23 @@
 
   --transition:.25s ease;
 
+  /* --- Identité Anonyma (refonte progressive) --- */
+  --brand-navy: #14335E;
+  --brand-navy-deep: #0B2038;
+  --brand-white: #FFFFFF;
+  --brand-bg-soft: #F5F8FC;
+
+  --brand-green: #2F9E5C;
+  --brand-yellow: #E8A93A;
+  --brand-red: #D6524B;
+
+  --brand-text: #17233D;
+  --brand-text-soft: #5B6B85;
+  --brand-border: #E3E8F0;
+
+  --blue-main: var(--brand-navy);
+  --gray-text: var(--brand-text-soft);
+  --red-light: #FBEAEA;
+  --red-main: var(--brand-red);
+
 }

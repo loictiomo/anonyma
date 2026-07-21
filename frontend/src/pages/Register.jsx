@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import api from "../services/api";
-import "./Register.css";
+import Logo from "../components/brand/Logo";
+import "../styles/Auth.css";
 
 function Register() {
   const navigate = useNavigate();
@@ -67,65 +68,89 @@ function Register() {
   };
 
   return (
-    <div className="register-page">
-      <form className="register-card" onSubmit={handleRegister}>
-        <h1>Anonyma</h1>
+    <div className="auth-page">
 
-        <p>Créer un compte anonyme</p>
+      <aside className="auth-brand-panel">
+        <Logo
+          size={52}
+          variant="light"
+          tagline="Réseau social anonyme"
+        />
 
-        {error && (
-          <div className="error-box">
-            {error}
+        <div className="auth-brand-copy">
+          <h2>Ta voix,<br />ton anonymat protégé.</h2>
+          <p>
+            Crée un compte en quelques secondes. Aucune donnée
+            personnelle requise — seulement un pseudo et un mot de passe.
+          </p>
+        </div>
+
+        <div className="auth-brand-ribbon" aria-hidden="true">
+          <span className="ribbon-seg ribbon-green" />
+          <span className="ribbon-seg ribbon-yellow" />
+          <span className="ribbon-seg ribbon-red" />
+        </div>
+      </aside>
+
+      <main className="auth-form-panel">
+        <form className="auth-card" onSubmit={handleRegister}>
+
+          <div className="auth-card-header">
+            <h1>Créer ton compte</h1>
+            <p>Rejoins Anonyma en toute confidentialité.</p>
           </div>
-        )}
 
-        {message && (
-          <div className="success-box">
-            {message}
-          </div>
-        )}
+          {error && (
+            <div className="auth-error-box">
+              {error}
+            </div>
+          )}
 
-        <label>Nom d'utilisateur</label>
+          {message && (
+            <div className="auth-success-box">
+              {message}
+            </div>
+          )}
 
-        <input
-          type="text"
-          placeholder="Ex : voixlibre237"
-          value={username}
-          onChange={(e) => setUsername(e.target.value)}
-        />
+          <label htmlFor="register-username">Nom d'utilisateur</label>
+          <input
+            id="register-username"
+            type="text"
+            placeholder="Ex : voixlibre237"
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
+          />
 
-        <label>Mot de passe</label>
+          <label htmlFor="register-password">Mot de passe</label>
+          <input
+            id="register-password"
+            type="password"
+            placeholder="Minimum 6 caractères"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
 
-        <input
-          type="password"
-          placeholder="Minimum 6 caractères"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-        />
+          <label htmlFor="register-confirm">Confirmer le mot de passe</label>
+          <input
+            id="register-confirm"
+            type="password"
+            placeholder="Répéter le mot de passe"
+            value={confirmPassword}
+            onChange={(e) => setConfirmPassword(e.target.value)}
+          />
 
-        <label>Confirmer le mot de passe</label>
+          <button type="submit" disabled={loading}>
+            {loading ? "Création du compte..." : "Créer mon compte"}
+          </button>
 
-        <input
-          type="password"
-          placeholder="Répéter le mot de passe"
-          value={confirmPassword}
-          onChange={(e) => setConfirmPassword(e.target.value)}
-        />
+          <span className="auth-switch">
+            Déjà inscrit ?{" "}
+            <Link to="/login">Se connecter</Link>
+          </span>
 
-        <button
-          type="submit"
-          disabled={loading}
-        >
-          {loading ? "Création du compte..." : "Créer mon compte"}
-        </button>
+        </form>
+      </main>
 
-        <span>
-          Déjà inscrit ?{" "}
-          <Link to="/login">
-            Se connecter
-          </Link>
-        </span>
-      </form>
     </div>
   );
 }

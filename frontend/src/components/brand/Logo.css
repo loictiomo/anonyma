@@ -1,0 +1,46 @@
+.logo-mark {
+  flex-shrink: 0;
+  display: block;
+}
+
+.logo-lockup {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.logo-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.15;
+}
+
+.logo-wordmark {
+  font-family: "Fraunces", Georgia, serif;
+  font-weight: 600;
+  font-size: 26px;
+  letter-spacing: 0.2px;
+}
+
+.logo-tagline {
+  font-family: "Manrope", sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  margin-top: 2px;
+}
+
+.logo-lockup--light .logo-wordmark {
+  color: #ffffff;
+}
+
+.logo-lockup--light .logo-tagline {
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.logo-lockup--dark .logo-wordmark {
+  color: #14335e;
+}
+
+.logo-lockup--dark .logo-tagline {
+  color: #5b6b85;
+}
