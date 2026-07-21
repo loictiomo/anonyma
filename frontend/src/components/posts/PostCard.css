@@ -107,6 +107,19 @@
   text-decoration: underline;
 }
 
+.post-view-link{
+  display: inline-block;
+  margin-top: 10px;
+  color: #6d5dfc;
+  font-weight: 600;
+  font-size: 14px;
+  text-decoration: none;
+}
+
+.post-view-link:hover{
+  text-decoration: underline;
+}
+
 .post-actions{
 
     display:flex;
