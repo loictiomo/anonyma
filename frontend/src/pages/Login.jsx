@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import api from "../services/api";
-import Logo from "../components/brand/Logo";
+import { FullLogo } from "../components/brand/Logo";
 import "../styles/Auth.css";
 
 function Login() {
@@ -63,14 +63,10 @@ function Login() {
     <div className="auth-page">
 
       <aside className="auth-brand-panel">
-        <Logo
-          size={52}
-          variant="light"
-          tagline="Réseau social anonyme"
-        />
+        <FullLogo width={200} />
 
         <div className="auth-brand-copy">
-          <h2>Libre de parler,<br />responsable de respecter.</h2>
+          <h2>Ton espace d'expression,<br />en toute confidentialité.</h2>
           <p>
             Un espace où ta voix compte, sans jamais exposer qui tu es
             — pensé pour des échanges honnêtes et respectueux.

@@ -2,38 +2,20 @@ import "./Logo.css";
 
 /**
  * LogoMark — the standalone "A" badge, no wordmark.
- * Used anywhere space is tight (favicon-style spots, compact headers).
+ * Wrapped in a white tile since the artwork carries its own white background.
  */
 function LogoMark({ size = 44 }) {
   return (
-    <svg
-      className="logo-mark"
-      width={size}
-      height={size}
-      viewBox="0 0 64 64"
-      xmlns="http://www.w3.org/2000/svg"
-      role="img"
-      aria-label="Anonyma"
+    <span
+      className="logo-mark-tile"
+      style={{ width: size, height: size }}
     >
-      <defs>
-        <linearGradient id="anonymaNavy" x1="0" y1="0" x2="1" y2="1">
-          <stop offset="0%" stopColor="#1B3E6E" />
-          <stop offset="100%" stopColor="#0B2038" />
-        </linearGradient>
-      </defs>
-
-      <rect x="1" y="1" width="62" height="62" rx="16" fill="url(#anonymaNavy)" />
-
-      {/* Flat-topped geometric A */}
-      <polygon points="17,49 26,15 31,15 22,49" fill="#FFFFFF" />
-      <polygon points="47,49 38,15 33,15 42,49" fill="#FFFFFF" />
-      <polygon points="24.2,39 39.8,39 38.2,34 25.8,34" fill="#FFFFFF" />
-
-      {/* Signature ribbon */}
-      <rect x="17" y="53" width="9" height="3" rx="1.5" fill="#2F9E5C" />
-      <rect x="27.5" y="53" width="9" height="3" rx="1.5" fill="#E8A93A" />
-      <rect x="38" y="53" width="9" height="3" rx="1.5" fill="#D6524B" />
-    </svg>
+      <img
+        src="/brand/logo-mark.png"
+        alt="Anonyma"
+        className="logo-mark-img"
+      />
+    </span>
   );
 }
 
@@ -58,5 +40,25 @@ function Logo({ size = 44, variant = "light", tagline }) {
   );
 }
 
-export { LogoMark };
+/**
+ * FullLogo — the entire artwork as supplied (icon + "Anonyma" wordmark +
+ * tagline all baked into one image). Use this when you want the logo
+ * exactly as designed, with no separately-typed text alongside it.
+ */
+function FullLogo({ width = 220 }) {
+  return (
+    <span
+      className="logo-full-tile"
+      style={{ width }}
+    >
+      <img
+        src="/brand/logo-full.png"
+        alt="Anonyma — Libre de parler, responsable de respecter"
+        className="logo-full-img"
+      />
+    </span>
+  );
+}
+
+export { LogoMark, FullLogo };
 export default Logo;

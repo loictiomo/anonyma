@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import api from "../services/api";
-import Logo from "../components/brand/Logo";
+import { FullLogo } from "../components/brand/Logo";
 import "../styles/Auth.css";
 
 function Register() {
@@ -71,11 +71,7 @@ function Register() {
     <div className="auth-page">
 
       <aside className="auth-brand-panel">
-        <Logo
-          size={52}
-          variant="light"
-          tagline="Réseau social anonyme"
-        />
+        <FullLogo width={200} />
 
         <div className="auth-brand-copy">
           <h2>Ta voix,<br />ton anonymat protégé.</h2>
